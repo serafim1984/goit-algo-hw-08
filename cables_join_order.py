@@ -7,13 +7,14 @@ def cable_join_order(iterable):
     for value in iterable:
         heapq.heappush(h, value)
     
-    # Витягуємо елементи впорядковано, формуючи відсортований масив.
+    # Визначаємо пари з найменшою довжиною.
     while len(h) > 1:
         join_1 = heapq.heappop(h)
         join_2 = heapq.heappop(h)
 
         print(f'Joint {i}: {join_1} and {join_2}')
 
+    # Створюємо новий елемент як суму двох найменших та додаємо його до купи.
         sum = join_1 + join_2
 
         heapq.heappush(h, sum)
